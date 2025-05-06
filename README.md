@@ -50,6 +50,8 @@ CrossFoldDB/
 ├── python/          # python scripts
 |   ├──
 |
+├── environment.yml  # Conda requirements   
+|
 ├── species.txt      # meta data and paths related to each species   
 |
 └── README.md
