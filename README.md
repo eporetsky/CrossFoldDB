@@ -24,7 +24,7 @@
 
 ### 🦠 *Aspergillus flavus*
 
-Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsukae*. Outgroup filtering helps isolate Aspergillus-specific structures.  Outgroup species in this example are *Fusarium graminearum* and *Saccharomyces cerevisiae*.  [https://ars-usda.box.com/s/v7qrygdzi0xj8sb8zd308ea0c5onepkm](Example datasets)  
+Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsukae*. Outgroup filtering helps isolate Aspergillus-specific structures.  Outgroup species in this example are *Fusarium graminearum* and *Saccharomyces cerevisiae*. [Example datasets](https://ars-usda.box.com/s/v7qrygdzi0xj8sb8zd308ea0c5onepkm) 
 
 ---
 
@@ -157,7 +157,7 @@ Repeat forward and reverse searches for each species. Continue until the number 
 - *Aspergillus parasiticus*
 - *Aspergillus hiratsukae*
 
-[https://ars-usda.box.com/s/v7qrygdzi0xj8sb8zd308ea0c5onepkm](Example datasets can be found at MaizeGDB)
+[Example datasets](https://ars-usda.box.com/s/v7qrygdzi0xj8sb8zd308ea0c5onepkm) can be found at MaizeGDB.
 
 ## 📫 Citation & Contact
 If you use CrossFoldDB in your research, please cite this repository.
