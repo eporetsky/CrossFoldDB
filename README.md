@@ -61,6 +61,8 @@ CrossFoldDB/
 |
 ├── JSON/             # Parsed JSON results (post-filtered), this can be renamed if multiple reference proteomes
 |
+├── log/              # Log files are stored here if Slurm is used
+|
 ├── scripts/ # bash scripts
 |   ├── S1_buildFoldSeekDB.sh           # Build script for FoldSeek databases
 |   ├── S2_searchFoldSeek_parallel.sh   # Parallel search script (forward/reverse)
@@ -93,17 +95,7 @@ Requirements:
 ## 🚀 Quickstart
 
 ### 1. Unpack structure files
-Helper script.  Unzips all *.gz files in ./structures/<species>. Current supports AlphaFold file format (AF-(.*?)-F1-model_v4.cif.gz) or ESMFold (*.pdb.gz). Other formats would require a change to the regular expressions in "foldseek_search_parallel.py", "extract_json_files_annotation_parallel.py" and "merge_JSON_alignments.py". Files are stored in ./structures/<species>/<species>
-
-```bash
-sbatch untar_directory.sh ./structures/flavus
-
-sbatch untar_directory.sh ./structures/hiratsukae
-sbatch untar_directory.sh ./structures/parasiticus
-
-sbatch untar_directory.sh ./structures/cerevisiae
-sbatch untar_directory.sh ./structures/graminearum
-```
+Put all structure files in ./structures/<species>. Supports PDB and CIF files.  The scripts supports AlphaFold file format (AF-(.*?)-F1-model_v4.cif.gz) or ESMFold (*.pdb.gz). Other formats would require a change to the regular expressions in "foldseek_search_parallel.py", "extract_json_files_annotation_parallel.py" and "merge_JSON_alignments.py". Files are stored in ./structures/<species>/<species>
 
 ### 2. Create a species list
 ```bash
