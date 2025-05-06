@@ -28,27 +28,29 @@ Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsuka
 ```text
 <pre><code>
 CrossFoldDB/
-├── structures/ # Compressed AlphaFold/CIF inputs per species
+├── structures/       # Compressed AlphaFold/CIF inputs per species
 │ └── <species>/<species>/
 |
-├── DB/ # FoldSeek formatted searchable databases
+├── DB/               # FoldSeek formatted searchable databases
 │ └── <species>DB/
 |
-├── html/ # Output HTML with alignment summaries
+├── html/             # Output HTML with alignment summaries
 |
-├── JSON/ # Parsed JSON results (post-filtered)
+├── JSON/             # Parsed JSON results (post-filtered)
 |
 ├── scripts/ # bash scripts
-|   ├── species_list.txt # List of species to include in pipeline
-|   ├── S1_buildFoldSeekDB.sh # Build script for FoldSeek databases
-|   ├── S2_searchFoldSeek_parallel.sh # Parallel search script (forward/reverse)
-|   ├── S3_extractJSON_parallel.sh # Convert FoldSeek results to legacy format
-|   ├── S4_merge_JSON.sh # Combine and filter results
-|   ├── S5_make_annotations.sh # Add annotations for reference proteins
-|   ├── untar_directory.sh # Utility to unzip input CIFs in parallel
+|   ├── species_list.txt                # List of species to include in pipeline
+|   ├── S1_buildFoldSeekDB.sh           # Build script for FoldSeek databases
+|   ├── S2_searchFoldSeek_parallel.sh   # Parallel search script (forward/reverse)
+|   ├── S3_extractJSON_parallel.sh      # Convert FoldSeek results to legacy format
+|   ├── S4_merge_JSON.sh                # Combine and filter results
+|   ├── S5_make_annotations.sh          # Add annotations for reference proteins
+|   ├── untar_directory.sh              # Utility to unzip input CIFs in parallel
 |
-├── python/ # python scripts
+├── python/          # python scripts
 |   ├──
+|
+├── species.txt      # meta data and paths related to each species   
 |
 └── README.md
 ```
