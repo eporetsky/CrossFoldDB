@@ -33,9 +33,23 @@ CrossFoldDB/
 ├── DB/               # FoldSeek formatted searchable databases
 │ └── <species>DB/
 |
+├── htdocs/           # The website code
+|   ├── index.php                                 # index file to display the FoldSeek html code
+|   |
+|   ├── annotation                                # Meta data for the reference proteome, can have multiple references
+|   |   ├── <reference_species>_alignments        # JSON files that holds any metadata to be shown in the summary section of the website
+|   |
+|   ├── <reference_species>_json                  # The alignment files between the reference (query) and the target proteomes
+|   |   ├── uniprot                               # One JSON file per protein in the proteome, this is the data generated in the main JSON folder
+|   ├── js                                        # JavaScript files
+|   | 
+|   ├── css                                       # CSS files, if needed
+|   | 
+|   ├── img                                       # Image files
+|
 ├── html/             # Output HTML with alignment summaries
 |
-├── JSON/             # Parsed JSON results (post-filtered)
+├── JSON/             # Parsed JSON results (post-filtered), this can be renamed if multiple reference proteomes
 |
 ├── scripts/ # bash scripts
 |   ├── species_list.txt                # List of species to include in pipeline
