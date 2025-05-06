@@ -27,6 +27,8 @@ Used as a reference outgroup to identify structurally novel effectors in *Fusari
 
 ## 📁 Directory Structure
 
+
+```text
 <pre><code>
 CrossFoldDB/
 ├── structures/ # Compressed AlphaFold/CIF inputs per species
@@ -35,15 +37,18 @@ CrossFoldDB/
 │ └── <species>DB/
 ├── html/ # Output HTML with alignment summaries
 ├── JSON/ # Parsed JSON results (post-filtered)
-├── species_list.txt # List of species to include in pipeline
-├── S1_buildFoldSeekDB.sh # Build script for FoldSeek databases
-├── S2_searchFoldSeek_parallel.sh # Parallel search script (forward/reverse)
-├── S3_extractJSON_parallel.sh # Convert FoldSeek results to legacy format
-├── S4_merge_JSON.sh # Combine and filter results
-├── S5_make_annotations.sh # Add annotations for reference proteins
-├── untar_directory.sh # Utility to unzip input CIFs in parallel
+├── scripts/ # bash scripts
+|   ├── species_list.txt # List of species to include in pipeline
+|   ├── S1_buildFoldSeekDB.sh # Build script for FoldSeek databases
+|   ├── S2_searchFoldSeek_parallel.sh # Parallel search script (forward/reverse)
+|   ├── S3_extractJSON_parallel.sh # Convert FoldSeek results to legacy format
+|   ├── S4_merge_JSON.sh # Combine and filter results
+|   ├── S5_make_annotations.sh # Add annotations for reference proteins
+|   ├── untar_directory.sh # Utility to unzip input CIFs in parallel
+├── python/ # python scripts
+|   ├──
 └── README.md
-</code></pre>
+```
 
 
 ---
@@ -75,17 +80,28 @@ sbatch untar_directory.sh ./structures/parasiticus
 sbatch untar_directory.sh ./structures/ruber
 ```
 
-2. Create a species list
+### 2. Create a species list
+```bash
+```
 
-3. Build FoldSeek databases
 
-4. Run FoldSeek searches (forward and reverse)
+### 3. Build FoldSeek databases
+
+### 4. Run FoldSeek searches (forward and reverse)
 Repeat forward and reverse searches for each species. Continue until the number of output JSON files stabilizes (≈ number of reference structures).
+```bash
+```
 
-5. Convert JSON results to legacy format
+### 5. Convert JSON results to legacy format
+```bash
+```
 
-6. Merge and filter JSON outputs
+### 6. Merge and filter JSON outputs
+```bash
+```
 
-7. Generate reference annotations (optional)
+### 7. Generate reference annotations (optional)
+```bash
+```
 
 
