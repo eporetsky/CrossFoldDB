@@ -52,7 +52,6 @@ CrossFoldDB/
 ├── JSON/             # Parsed JSON results (post-filtered), this can be renamed if multiple reference proteomes
 |
 ├── scripts/ # bash scripts
-|   ├── species_list.txt                # List of species to include in pipeline
 |   ├── S1_buildFoldSeekDB.sh           # Build script for FoldSeek databases
 |   ├── S2_searchFoldSeek_parallel.sh   # Parallel search script (forward/reverse)
 |   ├── S3_extractJSON_parallel.sh      # Convert FoldSeek results to legacy format
@@ -63,7 +62,7 @@ CrossFoldDB/
 ├── python/          # python scripts
 |   ├──
 |
-├── species.txt      # meta data and paths related to each species   
+├── species_list.txt                    # meta data and paths related to each species   
 |
 └── README.md
 ```
