@@ -29,7 +29,7 @@ Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsuka
 <pre><code>
 CrossFoldDB/
 ├── structures/ # Compressed AlphaFold/CIF inputs per species
-│ └── <species>/
+│ └── <species>/<species>/
 |
 ├── DB/ # FoldSeek formatted searchable databases
 │ └── <species>DB/
@@ -69,23 +69,28 @@ Requirements:
 ## 🚀 Quickstart
 
 ### 1. Unpack structure files
+Helper script.  Unzips all *.gz files in ./structures/<species>. Current supports AlphaFold file format (AF-(.*?)-F1-model_v4.cif.gz) or ESMFold (*.pdb.gz). Other formats would require a change to the regular expressions in "foldseek_search_parallel.py", "extract_json_files_annotation_parallel.py" and "merge_JSON_alignments.py". Files are stored in ./structures/<species>/<species>
 
 ```bash
-sbatch untar_directory.sh ./structures/arabidopsis
-sbatch untar_directory.sh ./structures/graminearum
-sbatch untar_directory.sh ./structures/cerevisiae
-sbatch untar_directory.sh ./structures/sorghi
-sbatch untar_directory.sh ./structures/bombycis
-sbatch untar_directory.sh ./structures/candidus
 sbatch untar_directory.sh ./structures/flavus
+
 sbatch untar_directory.sh ./structures/hiratsukae
 sbatch untar_directory.sh ./structures/parasiticus
-sbatch untar_directory.sh ./structures/ruber
+
+sbatch untar_directory.sh ./structures/cerevisiae
+sbatch untar_directory.sh ./structures/graminearum
 ```
 
 ### 2. Create a species list
 ```bash
-echo -e "arabidopsis\ngraminearum\ncerevisiae\nsorghi\nbombycis\ncandidus\nflavus\nhiratsukae\nparasiticus\nruber" > species_list.txt
+touch species_list.txt
+
+Species	HTML	DB	CIF	Annotation	UniProtID	SpeciesID
+flavus	./html/flavus	./DB/flavusDB	./structures/flavus/flavus	./annotation/flavus.tsv	UP000596276	332952
+hiratsukae	./html/hiratsukae	./DB/hiratsukaeDB	./structures/hiratsukae/hiratsukae	./annotation/hiratsukae.tsv	UP000630445	1194566
+parasiticus	./html/parasiticus	./DB/parasiticusDB	./structures/parasiticus/parasiticus	./annotation/parasiticus.tsv	UP000326532	5067
+graminearum	./html/graminearum	./DB/graminearumDB	./structures/graminearum/graminearum	./annotation/graminearum.tsv	UP000070720	229533
+cerevisiae	./html/cerevisiae	./DB/cerevisiaeDB	./structures/cerevisiae/cerevisiae	./annotation/cerevisiae.tsv	UP000070720	229533
 ```
 
 
