@@ -17,8 +17,7 @@
 
 ### 🦠 *Aspergillus flavus*
 
-Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsukae* *Arabidopsis*. Outgroup filtering helps isolate Aspergillus-specific structures.  Outgroup species in this example are  *Fusarium graminearum* and *Saccharomyces cerevisiae*.
-
+Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsukae*. Outgroup filtering helps isolate Aspergillus-specific structures.  Outgroup species in this example are *Fusarium graminearum* and *Saccharomyces cerevisiae*.
 
 ---
 
@@ -49,8 +48,6 @@ CrossFoldDB/
 |
 ├── python/          # python scripts
 |   ├──
-|
-├── environment.yml  # Conda requirements   
 |
 ├── species.txt      # meta data and paths related to each species   
 |
@@ -100,58 +97,36 @@ cerevisiae	./html/cerevisiae	./DB/cerevisiaeDB	./structures/cerevisiae/cerevisia
 
 ### 3. Build FoldSeek databases
 ```bash
-sbatch S1_buildFoldSeekDB.sh ./structures/arabidopsis/arabidopsis ./DB/arabidopsisDB
-sbatch S1_buildFoldSeekDB.sh ./structures/graminearum/graminearum ./DB/graminearumDB
-sbatch S1_buildFoldSeekDB.sh ./structures/cerevisiae/cerevisiae ./DB/cerevisiaeDB
-sbatch S1_buildFoldSeekDB.sh ./structures/sorghi/sorghi ./DB/sorghiDB
-sbatch S1_buildFoldSeekDB.sh ./structures/bombycis/bombycis ./DB/bombycisDB
-sbatch S1_buildFoldSeekDB.sh ./structures/candidus/candidus ./DB/candidusDB
-sbatch S1_buildFoldSeekDB.sh ./structures/flavus/flavus ./DB/flavusDB
-sbatch S1_buildFoldSeekDB.sh ./structures/hiratsukae/hiratsukae ./DB/hiratsukaeDB
-sbatch S1_buildFoldSeekDB.sh ./structures/parasiticus/parasiticus ./DB/parasiticusDB
-sbatch S1_buildFoldSeekDB.sh ./structures/ruber/ruber ./DB/ruberDB
+./S1_buildFoldSeekDB.sh ./structures/flavus/flavus ./DB/flavusDB
+./S1_buildFoldSeekDB.sh ./structures/hiratsukae/hiratsukae ./DB/hiratsukaeDB
+./S1_buildFoldSeekDB.sh ./structures/parasiticus/parasiticus ./DB/parasiticusDB
+./S1_buildFoldSeekDB.sh ./structures/graminearum/graminearum ./DB/graminearumDB
+./S1_buildFoldSeekDB.sh ./structures/cerevisiae/cerevisiae ./DB/cerevisiaeDB
 ```
 
 ### 4. Run FoldSeek searches (forward and reverse)
 Repeat forward and reverse searches for each species. Continue until the number of output JSON files stabilizes (≈ number of reference structures).
 ```bash
-sbatch S2_searchFoldSeek_parallel.sh arabidopsis forward
-sbatch S2_searchFoldSeek_parallel.sh graminearum forward
-sbatch S2_searchFoldSeek_parallel.sh cerevisiae forward
-sbatch S2_searchFoldSeek_parallel.sh sorghi forward
-sbatch S2_searchFoldSeek_parallel.sh bombycis forward
-sbatch S2_searchFoldSeek_parallel.sh candidus forward
-sbatch S2_searchFoldSeek_parallel.sh flavus forward
-sbatch S2_searchFoldSeek_parallel.sh hiratsukae forward
-sbatch S2_searchFoldSeek_parallel.sh parasiticus forward
-sbatch S2_searchFoldSeek_parallel.sh ruber forward
-
-sbatch S2_searchFoldSeek_parallel.sh arabidopsis reverse
-sbatch S2_searchFoldSeek_parallel.sh graminearum reverse
-sbatch S2_searchFoldSeek_parallel.sh cerevisiae reverse
-sbatch S2_searchFoldSeek_parallel.sh sorghi reverse
-sbatch S2_searchFoldSeek_parallel.sh bombycis reverse
-sbatch S2_searchFoldSeek_parallel.sh candidus reverse
-sbatch S2_searchFoldSeek_parallel.sh flavus reverse
-sbatch S2_searchFoldSeek_parallel.sh hiratsukae reverse
-sbatch S2_searchFoldSeek_parallel.sh parasiticus reverse
-sbatch S2_searchFoldSeek_parallel.sh ruber reverse
-
+./S2_searchFoldSeek_parallel.sh flavus forward
+./S2_searchFoldSeek_parallel.sh hiratsukae forward
+./S2_searchFoldSeek_parallel.sh parasiticus forward
+./S2_searchFoldSeek_parallel.sh graminearum forward
+./S2_searchFoldSeek_parallel.sh cerevisiae forward
 ```
 
 ### 5. Convert JSON results to legacy format
 ```bash
-sbatch S3_extractJSON_parallel.sh
+./S3_extractJSON_parallel.sh
 ```
 
 ### 6. Merge and filter JSON outputs
 ```bash
-sbatch S4_merge_JSON.sh
+./S4_merge_JSON.sh
 ```
 
 ### 7. Generate reference annotations (optional)
 ```bash
-sbatch S5_make_annotations.sh  # (for flavus and parasiticus)
+./S5_make_annotations.sh 
 ```
 ## 🌍 Species Included
 
