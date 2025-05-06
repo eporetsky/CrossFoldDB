@@ -27,6 +27,7 @@ Used as a reference outgroup to identify structurally novel effectors in *Fusari
 
 ## 📁 Directory Structure
 
+<pre><code>
 CrossFoldDB/
 ├── structures/ # Compressed AlphaFold/CIF inputs per species
 │ └── <species>/
@@ -42,6 +43,7 @@ CrossFoldDB/
 ├── S5_make_annotations.sh # Add annotations for reference proteins
 ├── untar_directory.sh # Utility to unzip input CIFs in parallel
 └── README.md
+</code></pre>
 
 
 ---
