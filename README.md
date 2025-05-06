@@ -17,7 +17,7 @@
 
 ### 🦠 *Aspergillus flavus*
 
-Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsukae**Arabidopsis* Outgroup filtering helps isolate Aspergillus-specific structures.  Outgroup species in this example are  *Fusarium graminearum* and *Saccharomyces cerevisiae*.
+Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsukae* *Arabidopsis*. Outgroup filtering helps isolate Aspergillus-specific structures.  Outgroup species in this example are  *Fusarium graminearum* and *Saccharomyces cerevisiae*.
 
 
 ---
