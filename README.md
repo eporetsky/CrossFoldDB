@@ -42,12 +42,15 @@ CrossFoldDB/
 |
 ├── htdocs/           # The website code
 |   ├── index.php                                 # index file to display the FoldSeek html code
+|   ├── summary.html                              # Edit the summary text in this file
+|   ├── examples.php                              # Add example sequences for the search bar
 |   |
-|   ├── annotation                                # Meta data for the reference proteome, can have multiple references
+|   ├── alignments                                # The alignment files between the reference (query) and the target proteomes
 |   |   ├── <reference_species>_alignments        # JSON files that holds any metadata to be shown in the summary section of the website
 |   |
-|   ├── <reference_species>_json                  # The alignment files between the reference (query) and the target proteomes
-|   |   ├── uniprot                               # One JSON file per protein in the proteome, this is the data generated in the main JSON folder
+|   ├── <reference_species>_json                  # Meta data for the reference proteome, can have multiple references
+|   |   ├── uniprot                               # One JSON file per protein in the proteome, this is the data generated in the main JSON folder. The file is named <Uniprot>.json
+|   |   ├── alias                                # Optional.  Allows to search by gene name (or other alias). One JSON file per protein in the proteome, the file is named <alias>.json
 |   ├── js                                        # JavaScript files
 |   | 
 |   ├── css                                       # CSS files, if needed
