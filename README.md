@@ -5,13 +5,20 @@
 
 ## 🔍 Key Features
 
-- Precomputed all-vs-all structure-based protein alignments using FoldSeek
-- Forward and reverse queries to ensure completeness
+- Precomputed a set of reference proteomes vs a large proteome set structure-based protein alignments using FoldSeek
 - Custom annotation integration from UniProt and genome metadata
 - Supports large-scale parallel searches on HPC
 - JSON conversion pipeline for downstream visualization and filtering
 
 ---
+
+## 🌐 Public Examples
+
+| Resource        | Link                                                                 |
+|----------------|----------------------------------------------------------------------|
+| MaizeGDB FoldSeek Viewer | [https://maizegdb.org/foldseek](https://maizegdb.org/foldseek) |
+| Fusarium Protein Structure Portal | [https://fusarium.maizegdb.org/protein_structure/](https://fusarium.maizegdb.org/protein_structure/) |
+
 
 ## 🧪 Use Case Examples
 
