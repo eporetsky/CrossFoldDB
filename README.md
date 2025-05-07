@@ -32,7 +32,6 @@ Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsuka
 
 
 ```text
-<pre><code>
 CrossFoldDB/
 ├── alignment/                           # Compressed AlphaFold/CIF inputs per species
 └── <reference_species>_alignments/      # The alignment files between the reference (query) and the target proteomes, move to htdocs when done
