@@ -34,23 +34,26 @@ Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsuka
 ```text
 <pre><code>
 CrossFoldDB/
-├── structures/       # Compressed AlphaFold/CIF inputs per species
-│ └── <species>/<species>/
+├── alignment/                           # Compressed AlphaFold/CIF inputs per species
+└── <reference_species>_alignments/      # The alignment files between the reference (query) and the target proteomes, move to htdocs when done
 |
-├── DB/               # FoldSeek formatted searchable databases
+├── structures/                          # Compressed AlphaFold/CIF inputs per species
+│ └── <species>/
+|
+├── DB/                                  # FoldSeek formatted searchable databases
 │ └── <species>DB/
 |
-├── htdocs/           # The website code
+├── htdocs/                              # The website code
 |   ├── index.php                                 # index file to display the FoldSeek html code
 |   ├── summary.html                              # Edit the summary text in this file
 |   ├── examples.php                              # Add example sequences for the search bar
 |   |
 |   ├── alignments                                # The alignment files between the reference (query) and the target proteomes
-|   |   ├── <reference_species>_alignments        # JSON files that holds any metadata to be shown in the summary section of the website
+|   |   ├── <reference_species>_alignments        
 |   |
 |   ├── <reference_species>_json                  # Meta data for the reference proteome, can have multiple references
 |   |   ├── uniprot                               # One JSON file per protein in the proteome, this is the data generated in the main JSON folder. The file is named <Uniprot>.json
-|   |   ├── alias                                # Optional.  Allows to search by gene name (or other alias). One JSON file per protein in the proteome, the file is named <alias>.json
+|   |   ├── alias                                 # Optional.  Allows to search by gene name (or other alias). One JSON file per protein in the proteome, the file is named <alias>.json
 |   ├── js                                        # JavaScript files
 |   | 
 |   ├── css                                       # CSS files, if needed
@@ -74,6 +77,8 @@ CrossFoldDB/
 ├── python/          # python scripts
 |   ├──foldseek_search_parallel.py                     #Python code for Step 2
 |   ├──extract_json_files_annotation_parallel.py       #Python code for Step 3
+|   ├──merge_JSON_alignments.py                        #Python code for Step 4
+|   ├──merge_JSON_alignments.py                        #Python code for Step 5
 |
 ├── species_list.txt                    # meta data and paths related to each species   
 |
