@@ -68,10 +68,12 @@ CrossFoldDB/
 ├── S3_extractJSON_parallel.sh      # Convert FoldSeek results to legacy format
 ├── S4_merge_JSON.sh                # Combine and filter results
 ├── S5_make_annotations.sh          # Add annotations for reference proteins
+├── process_species_job.sh          # Slurm helper file for step 3, if not on Slurm then replace with the python script
 ├── untar_directory.sh              # Utility to unzip input CIFs in parallel
 |
 ├── python/          # python scripts
-|   ├──
+|   ├──foldseek_search_parallel.py                     #Python code for Step 2
+|   ├──extract_json_files_annotation_parallel.py       #Python code for Step 3
 |
 ├── species_list.txt                    # meta data and paths related to each species   
 |
