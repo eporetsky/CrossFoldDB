@@ -63,18 +63,19 @@ CrossFoldDB/
 |
 ├── log/              # Log files are stored here if Slurm is used
 |
-├── scripts/ # bash scripts
-|   ├── S1_buildFoldSeekDB.sh           # Build script for FoldSeek databases
-|   ├── S2_searchFoldSeek_parallel.sh   # Parallel search script (forward/reverse)
-|   ├── S3_extractJSON_parallel.sh      # Convert FoldSeek results to legacy format
-|   ├── S4_merge_JSON.sh                # Combine and filter results
-|   ├── S5_make_annotations.sh          # Add annotations for reference proteins
-|   ├── untar_directory.sh              # Utility to unzip input CIFs in parallel
+├── S1_buildFoldSeekDB.sh           # Build script for FoldSeek databases
+├── S2_searchFoldSeek_parallel.sh   # Parallel search script (forward/reverse)
+├── S3_extractJSON_parallel.sh      # Convert FoldSeek results to legacy format
+├── S4_merge_JSON.sh                # Combine and filter results
+├── S5_make_annotations.sh          # Add annotations for reference proteins
+├── untar_directory.sh              # Utility to unzip input CIFs in parallel
 |
 ├── python/          # python scripts
 |   ├──
 |
 ├── species_list.txt                    # meta data and paths related to each species   
+|
+├── tmp                                 # tmp folder for FoldSeek   
 |
 └── README.md
 ```
