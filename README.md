@@ -87,6 +87,13 @@ CrossFoldDB/
 Requirements:
 
 - [FoldSeek](https://github.com/steineggerlab/foldseek)
+```bash
+# Linux AVX2 build (check using: cat /proc/cpuinfo | grep avx2)
+wget https://mmseqs.com/foldseek/foldseek-linux-avx2.tar.gz
+tar -xvzf foldseek-linux-avx2.tar.gz
+export PATH=$(pwd)/foldseek/bin/:$PATH
+```
+
 - Python 3.8+
 - SLURM-based HPC environment with `sbatch`
 
