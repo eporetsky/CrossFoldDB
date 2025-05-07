@@ -114,8 +114,7 @@ Put all structure files in ./structures/<species>. Supports PDB and CIF files.  
 
 Download the annotations for each species from Unirpot.  Save the Gene Names, Gene Names (ORF), Protein names.
 
-
-
+![Annotation overview](./Annotation.png)
 
 ### 2. Create a species list
 ```bash
