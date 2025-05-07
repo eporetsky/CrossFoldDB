@@ -108,8 +108,13 @@ export PATH=$(pwd)/foldseek/bin/:$PATH
 
 ## 🚀 Quickstart
 
-### 1. Unpack structure files
+### 1. Unpack structure and annotation files
 Put all structure files in ./structures/<species>. Supports PDB and CIF files.  The scripts supports AlphaFold file format (AF-(.*?)-F1-model_v4.cif.gz) or ESMFold (*.pdb.gz). Other formats would require a change to the regular expressions in "foldseek_search_parallel.py", "extract_json_files_annotation_parallel.py" and "merge_JSON_alignments.py". Files are stored in ./structures/<species>/<species>
+
+
+Download the annotations for each species from Unirpot.  Save the Gene Names, Gene Names (ORF), Protein names.
+
+
 
 ### 2. Create a species list
 ```bash
