@@ -59,9 +59,6 @@ CrossFoldDB/
 |   ├── <reference_species>_json                  # Meta data for the reference proteome, can have multiple references
 |   |   ├── uniprot                               # One JSON file per protein in the proteome, this is the data generated in the main JSON folder. The file is named <Uniprot>.json
 |   |   ├── alias                                 # Optional.  Allows to search by gene name (or other alias). One JSON file per protein in the proteome, the file is named <alias>.json
-|   ├── js                                        # JavaScript files
-|   | 
-|   ├── css                                       # CSS files, if needed
 |   | 
 |   └── img                                       # Image files
 |
