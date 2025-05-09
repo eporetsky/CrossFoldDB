@@ -51,7 +51,7 @@ CrossFoldDB/
 ├── htdocs/                              # The website code
 |   ├── index.php                                 # index file to display the FoldSeek html code
 |   ├── summary.html                              # Edit the summary text in this file
-|   ├── examples.php                              # Add example sequences for the search bar
+|   ├── examples.html                              # Add example sequences for the search bar
 |   |
 |   ├── alignments                                # The alignment files between the reference (query) and the target proteomes
 |   |   ├── <reference_species>_alignments        
