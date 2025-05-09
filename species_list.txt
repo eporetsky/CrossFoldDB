@@ -1,0 +1,6 @@
+Species	HTML	DB	Structure	Annotation	UniProtID	SpeciesID
+flavus	./html/flavus	./DB/flavusDB	./structures/flavus	./annotation/flavus.tsv	UP000596276	332952
+hiratsukae	./html/hiratsukae	./DB/hiratsukaeDB	./structures/hiratsukae	./annotation/hiratsukae.tsv	UP000630445	1194566
+parasiticus	./html/parasiticus	./DB/parasiticusDB	./structures/parasiticus	./annotation/parasiticus.tsv	UP000326532	5067
+graminearum	./html/graminearum	./DB/graminearumDB	./structures/graminearum	./annotation/graminearum.tsv	UP000070720	229533
+cerevisiae	./html/cerevisiae	./DB/cerevisiaeDB	./structures/cerevisiae	./annotation/cerevisiae.tsv	UP000070720	229533
