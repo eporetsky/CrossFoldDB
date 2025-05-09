@@ -16,7 +16,7 @@
 
 | Resource        | Link                                                                 |
 |----------------|----------------------------------------------------------------------|
-| MaizeGDB FoldSeek Viewer | [https://maizegdb.org/foldseek](https://maizegdb.org/foldseek) |
+| MaizeGDB FoldSeek Search | [https://maizegdb.org/foldseek](https://maizegdb.org/foldseek) |
 | Fusarium Protein Structure Portal | [https://fusarium.maizegdb.org/protein_structure/](https://fusarium.maizegdb.org/protein_structure/) |
 
 
@@ -34,13 +34,19 @@ Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsuka
 ```text
 CrossFoldDB/
 ├── alignment/                           # Compressed AlphaFold/CIF inputs per species
+|
 └── <reference_species>_alignments/      # The alignment files between the reference (query) and the target proteomes, move to htdocs when done
 |
+└── metadata/                            # The metasummary for the annotation file for the wensite, one file per protein
+│   └── <reference_species>_json/        # One directory for each reference genome
+|       ├── unitprot/                     # Files are named by the Uniprot ID for quick retrieval
+|       └── alias/                       # Files are named by the aliases (usaully gene or locus IDs) for quick retrieval  
+|
 ├── structures/                          # Compressed AlphaFold/CIF inputs per species
-│ └── <species>/
+│   └── <species>/
 |
 ├── DB/                                  # FoldSeek formatted searchable databases
-│ └── <species>DB/
+│   └── <species>DB/
 |
 ├── htdocs/                              # The website code
 |   ├── index.php                                 # index file to display the FoldSeek html code
@@ -57,7 +63,7 @@ CrossFoldDB/
 |   | 
 |   ├── css                                       # CSS files, if needed
 |   | 
-|   ├── img                                       # Image files
+|   └── img                                       # Image files
 |
 ├── html/             # Output HTML with alignment summaries
 |
@@ -69,7 +75,7 @@ CrossFoldDB/
 ├── S2_searchFoldSeek_parallel.sh   # Parallel search script (forward/reverse)
 ├── S3_extractJSON_parallel.sh      # Convert FoldSeek results to legacy format
 ├── S4_merge_JSON.sh                # Combine and filter results
-├── S5_make_annotations.sh          # Add annotations for reference proteins
+├── S5_make_annotations.sh          # Add metadata annotations for reference proteins
 ├── process_species_job.sh          # Slurm helper file for step 3, if not on Slurm then replace with the python script
 ├── untar_directory.sh              # Utility to unzip input CIFs in parallel
 |
