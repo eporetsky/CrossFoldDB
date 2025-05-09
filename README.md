@@ -35,9 +35,9 @@ Structure-based homology to *Aspergillus parasiticus* and *Aspergillus hiratsuka
 CrossFoldDB/
 ├── alignment/                           # Compressed AlphaFold/CIF inputs per species
 |
-└── <reference_species>_alignments/      # The alignment files between the reference (query) and the target proteomes, move to htdocs when done
+├── <reference_species>_alignments/      # The alignment files between the reference (query) and the target proteomes, move to htdocs when done
 |
-└── metadata/                            # The metasummary for the annotation file for the wensite, one file per protein
+├── metadata/                            # The metasummary for the annotation file for the wensite, one file per protein
 │   └── <reference_species>_json/        # One directory for each reference genome
 |       ├── unitprot/                     # Files are named by the Uniprot ID for quick retrieval
 |       └── alias/                       # Files are named by the aliases (usaully gene or locus IDs) for quick retrieval  
@@ -83,7 +83,7 @@ CrossFoldDB/
 |   ├──foldseek_search_parallel.py                     #Python code for Step 2
 |   ├──extract_json_files_annotation_parallel.py       #Python code for Step 3
 |   ├──merge_JSON_alignments.py                        #Python code for Step 4
-|   ├──merge_JSON_alignments.py                        #Python code for Step 5
+|   └──create_reference_annotation_files.py            #Python code for Step 5
 |
 ├── species_list.txt                    # meta data and paths related to each species   
 |
@@ -164,10 +164,20 @@ Repeat forward and reverse searches for each species. Continue until the number 
 ./S4_merge_JSON.sh
 ```
 
-### 7. Generate reference annotations (optional)
+### 7. Generate reference annotations
 ```bash
 ./S5_make_annotations.sh 
 ```
+
+### 8. Website 
+```bash
+cp <reference_species>_alignments/ ./htdocs/alignments/
+cp ./metadata/<reference_species>_json/unitprot/  ./htdocs/<reference_species>_json/
+cp ./metadata/<reference_species>_json/alias/  ./htdocs/<reference_species>_json/
+```
+
+Move the contents to a webserver that supports PHP.  Update summary.html and example.html with the appropriate text for your dataset.  The index.php will be the homepage.
+
 ## 🌍 Species Included
 
 
