@@ -133,15 +133,13 @@ cerevisiae	./html/cerevisiae	./DB/cerevisiaeDB	./structures/cerevisiae/cerevisia
 
 
 ### 3. Build FoldSeek databases
+Edit script variables as needed
 ```bash
-./S1_buildFoldSeekDB.sh ./structures/flavus/flavus ./DB/flavusDB
-./S1_buildFoldSeekDB.sh ./structures/hiratsukae/hiratsukae ./DB/hiratsukaeDB
-./S1_buildFoldSeekDB.sh ./structures/parasiticus/parasiticus ./DB/parasiticusDB
-./S1_buildFoldSeekDB.sh ./structures/graminearum/graminearum ./DB/graminearumDB
-./S1_buildFoldSeekDB.sh ./structures/cerevisiae/cerevisiae ./DB/cerevisiaeDB
+./S1_buildFoldSeekDB.sh
 ```
 
 ### 4. Run FoldSeek searches (forward and reverse)
+Edit script variables as needed
 Repeat forward and reverse searches for each species. Continue until the number of output JSON files stabilizes (≈ number of reference structures).
 ```bash
 ./S2_searchFoldSeek_parallel.sh flavus forward
@@ -152,16 +150,19 @@ Repeat forward and reverse searches for each species. Continue until the number 
 ```
 
 ### 5. Convert JSON results to legacy format
+Edit script variables as needed
 ```bash
 ./S3_extractJSON_parallel.sh
 ```
 
 ### 6. Merge and filter JSON outputs
+Edit script variables as needed
 ```bash
 ./S4_merge_JSON.sh
 ```
 
 ### 7. Generate reference annotations
+Edit script variables as needed
 ```bash
 ./S5_make_annotations.sh 
 ```
