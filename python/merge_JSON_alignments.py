@@ -103,7 +103,7 @@ def collect_uniprot_ids(reference_dir):
         print(f"ERROR: Reference directory '{reference_dir}' does not exist or is not a directory.")
         sys.exit(1)
 
-    for cif_gz_file in structures_path.glob('*.cif.gz'):
+    for cif_gz_file in structures_path.glob('*.pdb.gz'):
         uniprot_id = extract_uniprot_id(cif_gz_file.name)
         if uniprot_id:
             uniprot_ids.add(uniprot_id)

@@ -24,12 +24,12 @@ def run_foldseek_job(params):
     file_path, target_db, output_file, temp_path, home_path = params
 
     cmd = [
-        "./foldseek/bin/foldseek",
+        "foldseek",
         "easy-search",
-        f"{home_path}{file_path}",
-        f"{home_path}{target_db}",
-        f"{home_path}{output_file}",
-        f"{home_path}{temp_path}",
+        f"{file_path}",
+        f"{target_db}",
+        f"{output_file}",
+        f"{temp_path}",
         "--format-mode", "3",
         "--max-seqs", "10"
     ]
@@ -121,7 +121,7 @@ def main():
         jobs.append(params)
 
     # --- 5) run them in parallel ---
-    with concurrent.futures.ProcessPoolExecutor(max_workers=25) as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=48) as executor:
         for fpath, success, err in executor.map(run_foldseek_job, jobs):
             status = "Done" if success else f"FAILED: {err}"
             print(f"{status} → {fpath}")

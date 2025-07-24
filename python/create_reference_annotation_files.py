@@ -15,6 +15,7 @@ def main():
     gene_dir = sys.argv[3]
     species = sys.argv[4]
 
+    print(tsv_file,output_dir,gene_dir,species)
     # Create the output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
 
@@ -56,10 +57,12 @@ def main():
                 gene_file = os.path.join(gene_dir, f"{gene}.json")
 
                 # Write the JSON data
-                with open(gene_file, 'w', encoding='utf-8') as gene_out:
-                    json.dump(data, gene_out, indent=4)
-
-                print(f"Wrote {gene_file}")
+                try:
+                    with open(gene_file, 'w', encoding='utf-8') as gene_out:
+                        json.dump(data, gene_out, indent=4)
+                    print(f"Wrote {gene_file}")
+                except:
+                    print(f"Couldn't find {gene_file}")
 
 
     print(f"JSON files have been created in: {output_dir} and {gene_dir}")

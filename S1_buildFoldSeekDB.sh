@@ -1,4 +1,18 @@
 #!/bin/bash
+#SBATCH --account=your_account_name
+#SBATCH --partition=your_partition_name
+#SBATCH --job-name="S1"   	    #name of this job
+#SBATCH -N1                  		#number of nodes
+#SBATCH -n1                  		#number of cores
+#SBATCH --mem=200GB           	#number of memory
+#SBATCH --ntasks=1              #number of nodes
+#SBATCH --cpus-per-task=48	    #number of cores
+#SBATCH -t 2-00:00:00         		#maximum runtime
+#SBATCH -o "./log/stdout.%j.%N" 	# standard output
+#SBATCH -e "./log/stderr.%j.%N" 	#standard error
+
+
+#!/bin/bash
 date                          #optional, prints out timestamp at the start of the job in stdout file
 
 #!/usr/bin/env bash
@@ -13,7 +27,7 @@ if [[ ! -f "$input" ]]; then
 fi
 
 # 3) Now add foldseek to your PATH
-export PATH="$(pwd)/foldseek/bin/:$PATH"
+#export PATH="$(pwd)/foldseek/bin/:$PATH"
 
 # 4) Extract Structure & DB columns and loop
 awk -F $'\t' '

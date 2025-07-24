@@ -1,4 +1,16 @@
 #!/bin/bash
+#SBATCH --account=your_account_name
+#SBATCH --partition=your_partition_name
+#SBATCH --job-name="S3"         #name of this job
+#SBATCH -N1                             #number of nodes
+#SBATCH -n1                             #number of cores
+#SBATCH --mem=200GB             #number of memory
+#SBATCH --ntasks=1              #number of nodes
+#SBATCH --cpus-per-task=48      #number of cores
+#SBATCH -t 2-00:00:00                   #maximum runtime
+#SBATCH -o "./log/stdout.%j.%N"         # standard output
+#SBATCH -e "./log/stderr.%j.%N"         #standard error
+
 
 date                          #optional, prints out timestamp at the start of the job in stdout file
 
@@ -11,6 +23,10 @@ date                          #optional, prints out timestamp at the start of th
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+module load miniconda3
+eval "$(conda shell.bash hook)"
+conda activate ~/.conda/envs/crossfolddb
+
 # -------------------------------
 # Configuration
 # -------------------------------
@@ -19,7 +35,7 @@ set -e
 INPUT_FILE="species_list.txt"
 #INPUT_FILE="species_list_graminearum.txt"
 #INPUT_FILE="species_list_graminearum.txt"
-REFERENCE="flavus"
+REFERENCE="wheat"
 
 # Path to the Slurm job script template
 JOB_SCRIPT="process_species_job.sh"
